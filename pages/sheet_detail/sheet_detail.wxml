@@ -1,0 +1,94 @@
+<!--pages/sheet_detail/sheet_detail.wxml-->
+<!-- <view class="top">
+	<view class="image_box">
+		<image class="top_image" src="{{coverImgUrl}}" />
+	</view>
+</view>
+<view class='songs_list'>
+	<view wx:for="{{songList}}" wx:key="" class='song_item' data-id="{{item.id}}" bindtap='playAudio'>
+		<view class='song_index_box'>
+			<text class='song_index {{index+1 <=3 ? "active":""}}' >{{index + 1}}</text>
+		</view>
+		<view class='song_info'>
+			<view class='song_name'>{{item.name}}</view>
+			<view class='song_art-album'>{{item.ar[0].name}} - {{item.al.name}}</view>
+		</view>
+	</view>
+</view> -->
+
+<!-- 音乐播放背景图片 -->
+<image class="background_img" src="{{playlist.coverImgUrl}}"></image>
+<view class="wrapper">
+
+	<view class="top">
+		<view class="top-desc">
+			<image class="desc-img" src="{{playlist.coverImgUrl}}"></image>
+			<view class="desc-right">
+				<view class="desc-name">
+					{{playlist.name}}
+				</view>
+				<view class="user-info">
+					<image class="info-pic" src="{{playlist.creator.avatarUrl}}"></image>
+					<view class="user-nickname">
+						{{playlist.creator.nickname}}
+					</view>
+
+				</view>
+				<view class="desc-description">
+					{{playlist.description}}
+				</view>
+			</view>
+
+		</view>
+
+		<view class="list">
+			<!-- <view class="listbox" wx:for="{{detail}}" wx:key="index"> -->
+			<view class="listbox">
+				<view class="iconfont icon-comment"></view>
+				<view class="list-name">{{playlist.commentCount}}</view>
+			</view>
+				<view class="listbox">
+				<view class="iconfont icon-share"></view>
+				<view class="list-name">{{playlist.shareCount}}</view>
+			</view>
+				<view class="listbox">
+				<view class="iconfont icon-download"></view>
+				<view class="list-name">下载</view>
+			</view>
+				<view class="listbox">
+				<view class="iconfont icon-multi-choice"></view>
+				<view class="list-name">多选</view>
+			</view>
+		</view>
+	</view>
+	<scroll-view class="down" scroll-y>
+		<view class="">
+			<view class="buttonBox">
+				<!-- <image class="broadcast" bindtap="playAll" src="../../image/control_play.png" /> -->
+        <view class="iconfont icon-play" bindtap="playAll"></view>
+				<view class="broadcast-desc">
+					<text class="broadcast-name">播放全部</text>
+					<text class="broadcast-num">（共100首）</text>
+				</view>
+
+				<view class="collectBox">
+					<text class="collect-add">+ 收藏（322.8万）</text>
+				</view>
+			</view>
+
+			<view class="songlistbox">
+				<view class="song-list" wx:for="{{songList}}" wx:key="index" data-id="{{item.id}}" bindtap='playAudio'>
+					<view class='song-index {{index+1 <=3 ? "active":""}}' >{{index + 1}}</view>
+					<!-- <view class="song-index">{{index+1}}</view> -->
+					<view class="song">
+						<view class="song-name">{{item.name}}</view>
+						<view class="song-author">{{item.ar[0].name}} - {{item.al.name}}</view>
+					</view>
+					<view wx:if="{{item.mv !== 0}}" class="iconfont icon-play"></view>
+					<view  class="iconfont icon-ellipsis"></view>
+				</view>
+			</view>
+
+		</view>
+	</scroll-view>
+</view>

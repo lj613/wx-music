@@ -1,0 +1,13 @@
+<view class="tab-bar" hidden="{{songName==''}}" bindtap="goPlay">
+<!-- <view class="tab-bar" bindtap="goPlay"> -->
+	<image class="tab-bar-pic" src="{{songImg}}"></image>
+	<view class="tab-bar-text">
+		<view class="text-name">{{songName}}</view>
+		<view class="text-change">滑动可以切换上下首哦</view>
+	</view>
+	<view class="tab-bar-icon">    
+		<!-- 由于在整个tab-bar上绑定了goplay事件  在这里用catchtap="changeState"防止点击此事件后触发goPlay事件 -->
+		<view class="iconfont {{isPlay ? 'icon-suspend' : 'icon-play'}}" catchtap="changeState" ></view>
+		<view class="iconfont icon-music-list"></view>
+	</view>
+</view>

@@ -1,0 +1,67 @@
+/* pages/dj_rank/dj_rank.wxss */
+
+.hot_dj {
+  width: 100%;
+}
+
+.title {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.dj_list {
+  width: 100%;
+  padding: 0 20rpx 0 0;
+  box-sizing: border-box;
+}
+
+.dj_item {
+  margin-top: 20rpx;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.rank {
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.active {
+  color: red;
+}
+
+.image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.info {
+  width: 60%;
+  margin-left: 20rpx;
+}
+
+.name,
+.creatorName,
+.score {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 20rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: 400;
+}
+
+.creatorName,
+.score {
+  font-size: 24rpx;
+  color: #333;
+}

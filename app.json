@@ -1,0 +1,59 @@
+{
+  "pages":[
+    "pages/music/music",
+    "pages/video/video",
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/new_mv/new_mv",
+    "pages/recommend/recommend",
+    "pages/fm/fm",
+    "pages/sheet/sheet",
+    "pages/rank/rank",
+    "pages/live/live",
+    "pages/radio/radio",
+    "pages/rank_detail/rank_detail",
+    "pages/sheet_detail/sheet_detail",
+    "pages/play_music/play_music",
+    "pages/search/search",
+    "pages/album/album",
+    "pages/play_mv/play_mv",
+    "pages/dj_category/dj_category",
+    "pages/dj_pay/dj_pay",
+    "pages/dj_rank/dj_rank"
+  ],
+  "tabBar": {
+    "selectedColor":"#31c27c",
+    "list": [
+      {
+        "pagePath": "pages/music/music",
+        "text": "音乐",
+        "iconPath":"/images/music.png",
+        "selectedIconPath":"/images/music-actived.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath":"/images/video.png",
+        "selectedIconPath":"/images/video-actived.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath":"/images/my.png",
+        "selectedIconPath":"/images/my-actived.png"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "音乐",
+    "navigationBarTextStyle":"black",
+    "backgroundColor":"plum"
+  },
+  "style": "v2",
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

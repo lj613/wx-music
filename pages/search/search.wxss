@@ -1,0 +1,401 @@
+/* pages/search/search.wxss */
+@import '/icon/icon.wxss';
+
+/* 搜索部分 */
+.search_container{
+  width: 100%;
+  height: 100rpx;
+  background-color: #31c27c ;
+  padding: 20rpx 0 20rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.search{
+  flex: 1;
+  height: 60rpx;
+  display: flex;
+  border-radius: 35rpx;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255,.4);
+}
+.search_input{
+  flex: 1;
+  height: 60rpx;
+}
+.search_input .input{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  color: white;
+  font-size: 28rpx;
+}
+.search_button{
+  width: 60rpx;
+  height: 60rpx;
+  position: relative;
+}
+.icon-search{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 45rpx;
+  color: #fff;
+}
+.clear_box{
+  margin-right: 10rpx;
+  width: 50rpx;
+  height:60rpx ;
+  text-align: center;
+  line-height: 60rpx;
+}
+.icon-clear{
+  font-size:26rpx ;
+  color: #eee;
+}
+.cancle{
+  width: 100rpx;
+  height:60rpx ;
+  text-align: center;
+  line-height: 60rpx;
+}
+.hot_keys {
+  padding: 30rpx 30rpx 20rpx 30rpx;
+}
+
+/* 热门搜索 */
+.header_view_hide{
+  display: none;
+}
+.title {
+  color: #31c27c ;
+  font-size: 30rpx;
+  font-weight: 800
+}
+.hot_key_box{
+  display: flex;
+  /* flex-flow 属性是 flex-direction 和 flex-wrap 属性的复合属性。 */
+  flex-flow: row wrap;
+}
+.hot_keys_item{
+  font-size: 14px;
+  color: #31c27c;
+  background-color: #EDEEF0;
+  border-radius: 15rpx;
+  padding: 15rpx;
+  margin: 10rpx;
+}
+
+/* 搜索历史 */
+.search_history{
+  margin: 0rpx 35rpx 0rpx 35rpx;
+  margin-top: 40rpx;
+}
+.title_box{
+  display: flex;
+  justify-content: space-between;
+}
+.delete_box{
+}
+.icon-delete{
+  color: #31c27c ;
+  font-size: 40rpx;
+  font-weight: 800
+}
+
+/* 搜索结果显示 */
+.search_result_songs{
+  width: 100%;
+  height: 100%;
+}
+.search_result_song_item{
+   display: block;
+   margin: 15rpx;
+   border-bottom: 1px solid #EDEEF0;
+}
+.search_result_song_name{
+  font-size: 15px;
+  color: #000000;
+  margin-bottom: 15rpx;
+}
+.search_result_song_art-album{
+  font-size: 11px;
+  color: #000000;
+  font-weight:lighter;
+  margin-bottom: 5rpx;
+}
+
+/* 视频页 */
+
+.video_list .search_result_video{
+width: 100%;
+height: 100%;
+}
+.video_list .search_result_video_item{
+  display: flex;
+  margin: 15rpx;
+}
+.video_list .image_box{
+  width: 225rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+}
+.video_list .image_box image{
+  width: 100%;
+  height: 100%;
+}
+.video_list .info{
+  width:65% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10rpx;
+}
+.info .title{
+  font-size:32rpx;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color:black;
+}
+.creator{
+  margin-top:10rpx;
+ font-size: 24rpx;
+ color: #ddd;
+}
+
+/* 歌手tab页 */
+.singer_list .search_result_singer{
+  width: 100%;
+  height: 100%;
+}
+.singer_list .search_result_singer_item{
+  display: flex;
+  margin: 15rpx;
+  /* border: 1px solid plum; */
+}
+.singer_list .image_box{
+  width: 150rpx;
+  height: 150rpx;
+  /* border: 1px solid black; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+.singer_list .image{
+ width: 100%;
+ height: 100%;
+}
+.singer_list .info{
+  box-sizing: border-box;
+  width: 80%;
+  line-height:150rpx;
+  margin-left: 16rpx;
+}
+.singer_list .singer_name{
+font-size: 32rpx;
+}
+
+/* 专辑tab页 */
+.album_list .search_result_album{
+ width: 100%;
+ height: 100%;
+}
+.album_list .search_result_album_item{
+  display: flex;
+  margin: 15rpx;
+  /* border: 1px solid plum; */
+}
+.album_list .image_box{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.album_list .image{
+ width: 100%;
+ height: 100%;
+}
+.album_list .info{
+  box-sizing: border-box;
+  width: 560rpx;
+  margin-left: 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.album_list .album_name{
+font-size: 32rpx;
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.album_list .artist_name{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #ddd;
+  white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+/* 歌单部分 */
+.sheet_list .search_result_sheet{
+width: 100%;
+height: 100%;
+}
+.sheet_list .search_result_sheet_item{
+  display: flex;
+  margin: 15rpx;
+}
+.sheet_list .image_box{
+  width: 140rpx;
+  height: 140rpx;
+  /* border: 1px solid black; */
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.sheet_list .image{
+ width: 100%;
+ height: 100%;
+}
+.sheet_list .info{
+  box-sizing: border-box;
+  width: 560rpx;
+  padding: 10rpx 0;
+  margin-left: 16rpx;
+}
+.sheet_list .sheet_name{
+font-size: 32rpx;
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.sheet_list .creator_name{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #ddd;
+  white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+/* 用户部分 */
+.user_list .search_result_sheet{
+width: 100%;
+height: 100%;
+}
+.user_list .search_result_user_item{
+  display: flex;
+  margin: 15rpx;
+  /* border: 1px solid plum; */
+}
+.user_list .image_box{
+  width: 110rpx;
+  height: 110rpx;
+  /* border: 1px solid black; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user_list .image{
+ width: 100%;
+ height: 100%;
+}
+.user_list .info{
+  box-sizing: border-box;
+  width: 580rpx;
+  padding: 10rpx 0;
+  margin-left: 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user_list .user_nickname_name{
+font-size: 32rpx;
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.user_list .signature{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #ddd;
+  white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+/* 搜索结果tab栏 */
+.tab-h {
+  height: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 90rpx;
+  background: #F7F7F7;
+  font-size: 16px;
+  white-space: nowrap;
+  border-bottom: 0.5rpx solid #eee;
+}
+.tab-item {
+  margin: 0 36rpx;
+  display: inline-block;
+}
+.tab-item.active {
+  color: #31c27c ;
+  position: relative;
+}
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 100%;
+  background: #31c27c ;
+  position: absolute;
+  bottom: 0;
+  border-radius: 16rpx;
+}
+
+/* 主体内容 */
+.tab-content {
+  /* margin-top: 80rpx; */
+}
+.scoll-h {
+  height: 100%;
+}
+.songsheet_container{
+  margin-top: 25rpx;
+}
+.songsheet_container_title{
+font-size: 17px;
+font-weight: bold;
+padding-left: 10rpx;
+}
+.songsheet_items_box{
+display: flex;
+padding: 0 10rpx;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.songsheet_item_box{
+ width: 32%;
+padding-top: 10rpx;
+}
+.songsheet_image{
+width: 95%;
+height: 220rpx;
+margin: 5rpx;
+border-radius: 8rpx;
+}
+.songsheet_text{
+width: 95%;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+font-size: 13px;
+margin-top: 10rpx;
+padding-left: 10rpx;
+}

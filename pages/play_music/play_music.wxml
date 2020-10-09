@@ -1,0 +1,87 @@
+<!--pages/play_music/play_music.wxml-->
+
+<!-- 音乐播放页面 -->
+<image src="{{song.al.picUrl}}" class="background_img"></image>
+<view class="play_container">
+	<!-- 歌名 歌手 -->
+	<view class="song-info">
+		<view class="song-name">{{song.name}}</view>
+		<view class="singer-name" wx:for="{{song.ar}}" wx:key="{{index}}">{{item.name}}</view>
+	</view>
+	<!-- 封面 -->
+	<!-- 一开始onload时,showLyric=true, 显示为转动的图标，点击图标，切换为歌词-->
+	<view class="song-over" bindtap="showLyric">
+		<view class="moveCircle {{isPlay ? 'play' : ''}}" hidden="{{!showLyric}}">
+			<image src="{{song.al.picUrl}}" class="coverImg {{isPlay ? 'play' : ''}}" hidden="{{!showLyric}}" />
+		</view>
+
+		<!-- scroll-top 竖向滚动条的位置 -->
+		<scroll-view class="songLyric_container" hidden="{{showLyric}}" scroll-y scroll-top="{{marginTop}}">
+			<view class="lyric_container">
+				<!-- 纯音乐的情况 -->
+				<view wx:if="{{nolyric == 1}}">
+					<view class="no_lyric">纯音乐, 请欣赏</view>
+				</view>
+				<!-- 没有歌词的情况 -->
+				<view wx:if="{{nolyric == 2}}">
+					<view class="no_lyric">暂无歌词</view>
+				</view>
+				<!-- 歌词不支持滚动得情况 -->
+				<!-- <view wx:elif="{{nolyric == 2}}">
+					<view class="song_lyric">* 该歌词不支持自动滚动 *</view>
+					<block wx:for="{{lyricArray}}" wx:for-item="lyric" wx:for-index="index">
+						<text class="song_lyric">{{lyric}}</text>
+					</block>
+				</view> -->
+				<view wx:else>
+					<block wx:for="{{lyricArray}}" wx:for-item="lyric" wx:for-index="index">
+						<text class="song_lyric {{currentIndex == index? 'current_lyric':''}}">{{lyric[1]}}</text>
+					</block>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+
+	<!-- 进度条部分-->
+	<view class="progress_container">
+		<!-- 歌曲播放的当前时间 -->
+		<view class="play_time">{{playTime}}</view>
+		<!-- 进度条标签
+		   value:进度条移动到的值  
+			 max:进度条最大值  以歌曲总时长作为进度条最大值(秒数)
+			bindchange: 完成一次拖动后触发的事件
+		 -->
+
+		<slider class="progress" value="{{move}}" max="{{max}}" bindchange="drag" backgroundColor="#999" activeColor="#fff" block-size="12"></slider>
+		<!-- 歌曲总时长 -->
+		<view class="total_time">{{totalTime}}</view>
+	</view>
+
+
+	<!-- 控制按钮 -->
+	<view class="controls">
+		<!-- 切换随机播放 单曲循环 列表循环 -->
+		<view class="icon">
+			<!-- 列表循环 -->
+			<text class="iconfont {{mode=='single' ? 'icon-single' :(mode=='sequence'? 'icon-sequence':'icon-random')}}" bindtap="changeMode"></text>
+			<!-- 单曲循环 -->
+			<!-- <text class="iconfont icon-single" bindtap="prevSong"></text> -->
+			<!-- 随机播放 -->
+			<!-- <text class="iconfont icon-random" bindtap="prevSong"></text> -->
+		</view>
+		<!-- 上一首 -->
+		<view class="icon">
+			<text class="iconfont icon-prev" bindtap="prevSong"></text>
+			<!-- <text class="iconfont icon-prev" bindtap="go_nextSong"></text> -->
+			<!-- <image src="../images/lastSong.png" class="icon_play" bindtap="go_lastSong" /> -->
+		</view>
+		<!-- 播放暂停 -->
+		<view class="icon">
+			<text class="iconfont {{isPlay ? 'icon-suspend' : 'icon-play'}}"  bindtap="changeState"></text>
+		</view>
+		<!-- 下一首 -->
+		<view class="icon">
+			<text class="iconfont icon-next" bindtap="nextSong"></text>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,31 @@
+<view class="sheet_page">
+  <!-- tab栏 -->
+	<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+		<block wx:for="{{sheetCategory}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+			<view class="tab-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="swichNav">{{navItem.text}}</view>
+		</block>
+	</scroll-view>
+
+ <!-- tab栏对应内容 -->
+	<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+		<swiper-item wx:for="{{sheetlists}}" wx:for-index="tabIndex" wx:key="tabIndex">
+			<scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="loadMoreData">
+				<view class="songsheet_container">
+					<view class='songsheet_items_box'>
+						<view class="songsheet_item_box" wx:for="{{item.resultlist}}" wx:for-item="result" wx:key="index" data-id="{{result.id}}" bindtap='goSheetDetail'>
+						  <!-- 由于推荐页获取的数据图片数据的属性不同，所以需进行判断 当tabIndex为0 即为推荐页面 -->
+							<view wx:if="{{tabIndex == 0}}">
+								<image src='{{result.picUrl}}' class="songsheet_image"></image>
+							</view>
+							<!-- tabIndex不为0 为其它页面 -->
+							<view wx:else>
+								<image src='{{result.coverImgUrl}}' class="songsheet_image"></image>
+							</view>
+							<view class='songsheet_text'>{{result.name}}</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</swiper-item>
+	</swiper>
+</view>

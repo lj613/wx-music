@@ -1,0 +1,39 @@
+<!-- play_mv.wxml -->
+
+<!-- mv播放页面 -->
+
+<!-- mv 视频 -->
+<view class="mv_box">
+	<video src="{{mv.brs['480']}}" class="mv" title="{{mv.name}}"></video>
+</view>
+
+
+<view class="content">
+	<!-- mv信息 -->
+	<view class="mv_name">{{mv.name}}</view>
+	<view class="mv_time mv_times">{{mv.playCount}} 次观看</view>
+	<view class="mv_time"> {{mv.publishTime}} 发布</view>
+	<view class="mv_desc_container" wx:for="{{mvDesc}}" wx:key="index">
+		<view class=" mv_desc">{{item}}</view>
+	</view>
+
+	<!-- 底部图标 -->
+	<view class="icons">
+		<view class="icon">
+			<text class="iconfont icon-like" ></text>
+			<text class="number">{{mv.likeCount}}</text>
+		</view>
+		<view class="icon">
+			<text class="iconfont icon-collect" ></text>
+			<text class="number">{{mv.subCount}}</text>
+		</view>
+		<view class="icon">
+			<text class="iconfont icon-comment" ></text>
+			<text class="number">{{mv.commentCount}}</text>
+		</view>
+		<view class="icon">
+			<text class="iconfont icon-share" ></text>
+			<text class="number"> {{mv.shareCount}}</text>
+		</view>
+	</view>
+</view>

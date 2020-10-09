@@ -1,0 +1,11 @@
+    <!--最新 MV 页面 -->
+    <view class='mv_container'>
+      <text class='mv_container_title'>MV</text>
+      <view class='mv_list'>
+        <view wx:for="{{mv}}" wx:key="" class='mv_item' data-id="{{item.id}}" bindtap='PlayMv'>
+          <image src='{{item.cover}}' class="mv_image"></image>
+          <text class='mv_name'>{{item.name}}</text>
+          <text class='mv_artist_name'>{{item.artistName}}</text>
+        </view>
+      </view>
+    </view>

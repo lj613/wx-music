@@ -1,0 +1,13 @@
+<!--pages/dj_pay/dj_pay.wxml-->
+<!-- 电台付费精品页面 -->
+<view class='pay_container'>
+	<view class='pay_list'>
+		<view wx:for="{{pay}}" wx:key="" class='pay_item' bindtap='handlePlayDj'>
+			<image src='{{item.picUrl}}' class="pay_image"></image>
+			<view class="info">
+				<view class='pay_name'>{{item.name}}</view>
+				<view class='rcmdText'>{{item.rcmdText}}</view>
+			</view>
+		</view>
+	</view>
+</view>

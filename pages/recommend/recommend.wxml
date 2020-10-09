@@ -1,0 +1,33 @@
+<!--pages/recommend/recommend.wxml-->
+<!-- 每日推荐页面 -->
+
+<view class="wrapper">
+	<!-- <image class="bg-pic" src="../../images/recommend_bg.jpg"></image> -->
+	<image class="bg-pic" src="http://p1.music.126.net/5wkzI-WaxsR8CBbSqAyr9A==/109951165355213958.jpg"></image>
+	<view class="top">
+		<view class="title">
+			<text class="title-day">{{day}}</text>
+			<text class="title-month">/{{month}}</text>
+			<view>
+				<text class="title-text">每日推荐</text>
+			</view>
+		</view>
+	</view>
+	<view class="down">
+		<view class="buttonBox">
+			<view class="iconfont icon-play" bindtap="playAll"></view>
+			<text class="broadcast-name">播放全部</text>
+		</view>
+		<view class="songlistbox">
+			<view class="song-list" wx:for="{{songs}}" wx:key="index" data-in="{{item}}" bindtap="playMusic">
+				<image class="song-img" src="{{item.al.picUrl}}"></image>
+				<view class="song">
+					<view class="song-name">{{item.name}}</view>
+					<view class="song-author">{{item.ar[0].name}} - {{item.al.name}}</view>
+				</view>
+				<view wx:if="{{item.mv !== 0}}" class="iconfont icon-play"></view>
+				<view class="iconfont icon-ellipsis"></view>
+			</view>
+		</view>
+	</view>
+</view>

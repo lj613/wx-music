@@ -1,0 +1,37 @@
+/* pages/rank/rank.wxss */
+
+/* 歌单排行榜 */
+.songsheet_container {
+  margin-top: 25rpx;
+}
+
+
+.songsheet_items_box {
+  display: flex;
+  padding: 0 10rpx;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.songsheet_item_box {
+  width: 32%;
+  padding-top: 16rpx;
+  text-align: center;
+}
+
+.songsheet_image {
+  width: 95%;
+  height: 220rpx;
+  margin: 5rpx;
+  border-radius: 8rpx;
+}
+
+.songsheet_text {
+  width: 95%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+}

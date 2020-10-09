@@ -1,0 +1,12 @@
+<!--pages/dj_category/dj_category.wxml-->
+<!-- 电台分类页面 -->
+<view class="dj_category">
+	<view class="title">电台分类</view>
+	<view class="category_list">
+		<view class="category_item_box" wx:for="{{djCategory}}">
+			<view class="category_item">
+				{{item.name}}
+			</view>
+		</view>
+	</view>
+</view>

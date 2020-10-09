@@ -1,0 +1,193 @@
+<!--pages/search2/search2.wxml-->
+<view class="search_page">
+	<!-- 搜索部分 -->
+	<view class="search_container">
+		<view class="search">
+			<view class="search_button" bindtap="doSearch">
+				<text class="iconfont icon-search"></text>
+			</view>
+			<view class="search_input">
+				<!-- bindconfirm： 点击完成按钮时触发， -->
+				<input type="text" class="input" placeholder="请输入歌手或歌曲名" value="{{inputValue}}" bindinput="getsearchKey" bindblur="handleBlur" bindconfirm="searchover"></input>
+			</view>
+			<!-- 清空输入 -->
+			<view class="clear_box" bindtap="clearInput">
+				<view class="iconfont icon-clear"></view>
+			</view>
+		</view>
+		<view class="cancle" bindtap="cancel">取消</view>
+	</view>
+
+	<!-- 热门搜索 -->
+	<view class="{{showView?'hot_keys':'header_view_hide'}}">
+		<view class="title">热门搜索</view>
+		<view class='hot_key_box'>
+			<view wx:for="{{hotsongs}}" wx:key="">
+				<view class='hot_keys_item' data-value='{{item.first}}' bindtap='fill_value'>{{item.first}}</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 搜索历史 -->
+	<view class="{{showView?'search_history':'header_view_hide'}}">
+		<view class="title_box">
+			<view class="title history">搜索历史</view>
+			<view class="delete_box" bindtap="clearHistory">
+				<text class="iconfont icon-delete" ></text>
+			</view>
+		</view>
+
+		<!-- <icon type='clear' bindtap="clearHistory" class="title record" color="#DE655C"></icon> -->
+		<view class="hot_key_box">
+			<text class="hot_keys_item" wx:for="{{history}}" wx:key="" data-value='{{item}}' data-index="{{index}}" bindtap="fill_value">{{item}}</text>
+		</view>
+	</view>
+
+	<!-- 所有搜索结果显示部分 -->
+	<view class="{{showView?'header_view_hide':'search_result'}}">
+		<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+			<block wx:for="{{sheetCategory}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+				<view class="tab-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="swichNav">{{navItem.text}}</view>
+			</block>
+		</scroll-view>
+
+		<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+			<!-- 综合tab页 -->
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h">
+					<view class='search_result_songs'>
+						<view wx:for="{{searchresult}}" wx:key="" class='search_result_song_item' data-id="{{item.id}}" bindtap='PlayAudio'>
+							<view class='search_result_song_name'>{{item.name}}</view>
+							<view class='search_result_song_art-album'>{{item.artists[0].name}} - {{item.album.name}}</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+			<!-- 单曲tab页 -->
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h">
+					<view class='search_result_songs'>
+						<view wx:for="{{searchresult}}" wx:key="" class='search_result_song_item' data-id="{{item.id}}" bindtap='PlayAudio'>
+							<view class='search_result_song_name'>{{item.name}}</view>
+							<view class='search_result_song_art-album'>{{item.artists[0].name}} - {{item.album.name}}</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+			<!-- 云村tab页 -->
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h">
+					<view class='search_result_songs'>
+						<view wx:for="{{searchresult}}" wx:key="" class='search_result_song_item' data-id="{{item.id}}" bindtap='PlayAudio'>
+							<view class='search_result_song_name'>{{item.name}}</view>
+							<view class='search_result_song_art-album'>{{item.artists[0].name}} - {{item.album.name}}</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+			<!-- 视频tab页 -->
+			<swiper-item class="video_list">
+				<scroll-view scroll-y="true" class="scoll-h">
+					<view class='search_result_video'>
+						<view wx:for="{{videoresult}}" wx:key="" class='search_result_video_item' data-id="{{item.vid}}" bindtap='PlayAudio'>
+							<view class="image_box">
+								<image class="image" src="{{item.coverUrl}}"></image>
+							</view>
+							<view class="info">
+								<view class='title'>{{item.title}}</view>
+								<view class='creator'>
+									<text wx:for="{{item.creator}}" wx:for-item="creator">{{creator.userName}} </text>
+								</view>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+			<!-- 歌手tab页 -->
+			<swiper-item class="singer_list">
+				<scroll-view scroll-y="true" class="scoll-h">
+					<view class='search_result_singer'>
+						<view wx:for="{{singerresult}}" wx:key="" class='search_result_singer_item' data-id="{{item.id}}" bindtap='PlayAudio'>
+							<view class="image_box">
+								<image class="image" src="{{item.picUrl}}"></image>
+							</view>
+							<view class="info">
+								<view class='singer_name'>{{item.name}}</view>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+			<!-- 专辑tab页 -->
+			<swiper-item class="album_list">
+				<scroll-view scroll-y="true" class="scoll-h">
+					<view class='search_result_album'>
+						<view wx:for="{{albumresult}}" wx:key="" class='search_result_album_item' data-id="{{item.id}}" bindtap='PlayAudio'>
+							<view class="image_box">
+								<image class="image" src="{{item.blurPicUrl}}"></image>
+							</view>
+							<view class="info">
+								<view class='album_name'>{{item.name}}</view>
+								<view class='artist_name'>{{item.artist.name}}</view>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+			<!-- 歌单tab页 -->
+			<swiper-item class="sheet_list">
+				<scroll-view scroll-y="true" class="scoll-h">
+					<view class='search_result_sheet'>
+						<view wx:for="{{sheetresult}}" wx:key="" class='search_result_sheet_item' data-id="{{item.id}}" bindtap='PlayAudio'>
+							<view class="image_box">
+								<image class="image" src="{{item.coverImgUrl}}"></image>
+							</view>
+							<view class="info">
+								<view class='sheet_name'>{{item.name}}</view>
+								<view class='creator_name'>by {{item.creator.nickname}}</view>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+			<!-- 主播电台页 -->
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h">
+					<view class='search_result_songs'>
+						<view wx:for="{{searchresult}}" wx:key="" class='search_result_song_item' data-id="{{item.id}}" bindtap='PlayAudio'>
+							<view class='search_result_song_name'>{{item.name}}</view>
+							<view class='search_result_song_art-album'>{{item.artists[0].name}} - {{item.album.name}}</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+
+			<!-- 用户tab页 -->
+			<swiper-item class="user_list">
+				<scroll-view scroll-y="true" class="scoll-h">
+					<view class='search_result_user'>
+						<view wx:for="{{userresult}}" wx:key="" class='search_result_user_item' data-id="{{item.userId}}" bindtap='PlayAudio'>
+							<view class="image_box">
+								<image class="image" src="{{item.avatarUrl}}"></image>
+							</view>
+							<view class="info">
+								<view class='user_nickname_name'>{{item.nickname}}</view>
+								<view class='signature'>{{item.signature}} </view>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+	</view>
+
+
+
+</view>

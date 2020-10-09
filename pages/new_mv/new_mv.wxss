@@ -1,0 +1,48 @@
+.mv_container {
+  margin-top: 25rpx;
+}
+
+.mv_container_title {
+  font-size: 17px;
+  font-weight: bold;
+  padding-left: 10rpx;
+}
+
+.mv_image {
+  width: 95%;
+  height: 220rpx;
+  margin: 5rpx;
+  border-radius: 8rpx;
+}
+
+.mv_name {
+  /* 可实现多行省略号 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 将对象作为弹性伸缩盒子模型显示 */
+  display: -webkit-box;
+  /* 用于显示的行数 */
+  -webkit-line-clamp: 1;
+  /* 设置或检索伸缩盒对象的子元素的排列方式  值设为vertical时为垂直排列 */
+  -webkit-box-orient: vertical;
+  font-size: 16px;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+}
+
+.mv_artist_name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #999;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+}
+
+.mv_item {
+  padding-top: 10rpx;
+  width: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+}

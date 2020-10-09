@@ -1,0 +1,64 @@
+@import '/icon/icon.wxss';
+.tab-bar {
+  border-top: 1px solid rgb(220, 220, 220);
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #31c27c;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.tab-bar-pic {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.tab-bar-text {
+  width: 70%;
+  padding-left: 10rpx;
+}
+
+.text-name {
+  color: white;
+  font-size: 32rpx;
+  line-height: 1;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-change {
+  margin-top: 10rpx;
+  color: white;
+  font-size: 24rpx;
+}
+
+.tab-bar-icon {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-play,
+.icon-suspend {
+  position: relative;
+  z-index: 6;
+  font-size: 54rpx;
+  margin-right: 20rpx;
+  color: white;
+  /* border: 1px solid pink; */
+}
+
+.icon-music-list {
+  font-size: 60rpx;
+  color: white;
+  /* border: 1px solid black; */
+}

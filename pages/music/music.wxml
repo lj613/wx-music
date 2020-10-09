@@ -1,0 +1,107 @@
+<!-- 搜索 -->
+<view class="search_container">
+	<view class="search" bindtap="go_search">
+		<view class="search_input">
+		 <view class="input">	请输入歌手或歌曲名</view>
+			<!-- <input type="text" class="input">请输入歌手或歌曲名</input> -->
+		</view>
+		<view class="search_button">
+			<text class="iconfont icon-search"></text>
+		</view>
+	</view>
+
+</view>
+<!-- 顶部轮播图 -->
+<swiper class="swiperContainer" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+	<block wx:for="{{banners}}" wx:key="index">
+		<swiper-item>
+			<!-- <image src="{{item.imageUrl}}" /> -->
+			<image src="{{item.pic}}" />
+			<!-- <view class="swiper-item {{item}}"></view> -->
+		</swiper-item>
+	</block>
+</swiper>
+<!-- 功能按钮 -->
+<scroll-view scroll-x="true">
+	<view class="banner" scroll-x="true">
+			<view class="banner_Item" bindtap="go_recommend">
+			<view class="icon_box">
+				<text class="iconfont icon-recommend"></text>
+			</view>
+			<view class="msg">每日推荐</view>
+		</view>
+		<view class="banner_Item" bindtap="go_newMv">
+			<view class="icon_box">
+				<text class="iconfont icon-recommend"></text>
+			</view>
+			<view class="msg">最新mv</view>
+		</view>
+		<view class="banner_Item" bindtap="go_fm">
+			<view class="icon_box">
+				<text class="iconfont icon-FM"></text>
+			</view>
+			<view class="msg">私人FM</view>
+		</view>
+		<view class="banner_Item" bindtap="go_sheet">
+			<view class="icon_box">
+				<text class="iconfont iconsong-sheet"></text>
+			</view>
+			<view class="msg">歌单</view>
+		</view>
+		<view class="banner_Item" bindtap="go_rank">
+			<view class="icon_box">
+				<text class="iconfont icon-rank"></text>
+			</view>
+			<view class="msg">排行榜</view>
+		</view>
+		<view class="banner_Item" bindtap="go_live">
+			<view class="icon_box">
+				<text class="iconfont icon-direct-broadcast"></text>
+			</view>
+			<view class="msg">直播</view>
+		</view>
+		<view class="banner_Item" bindtap="go_radio">
+			<view class="icon_box">
+				<view class="icon_box">
+					<text class="iconfont iconradio"></text>
+				</view>
+			</view>
+			<view class="msg">电台</view>
+		</view>
+	</view>
+</scroll-view>
+
+<!-- 精选歌单 -->
+<view class="songsheet_container">
+	<text class='songsheet_container_title' >精选歌单</text>
+	<view class='songsheet_items_box'>
+		<view class="songsheet_item_box" wx:for="{{songsheet}}" wx:key="index" data-id="{{item.id}}" bindtap='goSheetDetail'>
+			<image src='{{item.coverImgUrl}}' class="songsheet_image"></image>
+			<view class='songsheet_text'>{{item.name}}</view>
+		</view>
+	</view>
+</view>
+<!-- 最新音乐 -->
+<view class="newsongs songsheet_container">
+	<text class='songsheet_container_title'  >最新音乐</text>
+	<view class='songsheet_items_box'>
+		<view class="songsheet_item_box" wx:for="{{newsong}}" wx:key="index"  data-id="{{item.id}}" bindtap='playAudio'>
+			<image src='{{item.picUrl}}' class="songsheet_image"></image>
+			<view class='songsheet_text newsong_songname'>{{item.name}}</view>
+			<view class='songsheet_text newsong_artists'>{{item.song.artists[0].name}}</view>
+		</view>
+	</view>
+</view>
+<!-- 新碟上架 -->
+<view class="newAlbum newsongs songsheet_container">
+	<text class='songsheet_container_title'>新碟上架</text>
+	<view class='songsheet_items_box'>
+		<view class="songsheet_item_box" wx:for="{{newalbum}}" wx:key="{{index}}" data-id="{{item.id}}"  bindtap='goAlbumDetail'>
+			<image src='{{item.picUrl}}' class="songsheet_image"></image>
+			<view class='songsheet_text'>{{item.name}}</view>
+			<view class='newsong_artists'>{{item.artist.name}}</view>
+		</view>
+	</view>
+</view>
+
+<control></control>

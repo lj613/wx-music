@@ -1,0 +1,205 @@
+
+@import '/icon/icon.wxss';
+
+/* 搜索部分 */
+.search_container{
+  width: 100%;
+  height: 120rpx;
+  background-color: #31c27c ;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.search{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  /* font-size: 0; */
+  border-radius: 60rpx;
+  /* color: white; */
+  background-color: rgba(255, 255, 255,.4);
+  /* border: 1px solid black; */
+}
+.search_input{
+  flex: 1;
+  height: 80rpx;
+  /* background-color: pink; */
+  /* padding: 0 40rpx; */
+  /* box-sizing: border-box; */
+   /* overflow: hidden; */
+}
+.search_input .input{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  color: white;
+}
+.search_button{
+  overflow: hidden;
+  width: 80rpx;
+  height: 80rpx;
+  /* background-color: plum; */
+  position: relative;
+  margin-right: 20rpx;
+}
+.icon-search{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 60rpx;
+  color: #fff;
+}
+/* 图片轮播样式 */
+.swiperContainer{
+ width: 100%;
+ height: 300rpx;
+ /* background-color:plum; */
+}
+.swiperContainer image{
+width: 100%;
+height:100%;
+}
+/* 功能按钮 */
+/* .banner{
+  height:160rpx; 
+  width:100%;
+  display: flex;
+  display: -webkit-box;
+  flex-direction: column;
+  padding: 20rpx 5rpx;
+  border: 0.5rpx solid red;
+} 
+
+.banner_Item{ 
+ width: 160rpx;
+ height: 160rpx; 
+ background-color:red;
+  border: 0.5rpx solid pink;
+ margin-right:10rpx;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ border: 0.5rpx solid yellow;
+ margin: 0 auto;
+ 
+ align-items: center;
+} 
+
+.icon_box{
+  position: relative;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color:#31c27c ;
+}
+.msg{
+  font-size: 20rpx;
+  margin-top:10rpx ;
+}
+.iconfont{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 80rpx;
+  color: #fff;
+} */
+
+.banner{
+  height:150rpx; 
+  width:100%;
+  display: flex;
+  display: -webkit-box;
+  flex-direction: column;
+  padding: 20rpx 5rpx;
+  /* border: 0.5rpx solid black; */
+} 
+.banner_Item{ 
+ width: 150rpx;
+ height: 150rpx;
+ /* background-color:red; */
+ margin-right:10rpx;
+ display: flex;
+ flex-direction: column;
+align-items: center;
+} 
+.icon_box{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  background-color:#31c27c ;
+  position: relative;
+}
+.iconfont{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 70rpx;
+  color: #fff;
+}
+.msg{
+  font-size: 20rpx;
+  margin-top:10rpx ;
+}
+/* 精选歌单 */
+.songsheet_container{
+    margin-top: 25rpx;
+}
+.songsheet_container_title{
+  font-size: 17px;
+  font-weight: bold;
+  padding-left: 10rpx;
+}
+.songsheet_items_box{
+  display: flex;
+  padding: 0 10rpx;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.songsheet_item_box{
+   width: 32%;
+  padding-top: 10rpx;
+  /* border: 1px solid pink; */
+}
+.songsheet_image{
+  width: 95%;
+  height: 220rpx;
+  /* padding: 10rpx; */
+  margin: 5rpx;
+  border-radius: 8rpx;
+}
+.songsheet_text{
+  width: 95%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+}
+
+/* 最新音乐 */
+/* .newsongs .newsong_songname{
+  
+} */
+ .newsong_artists{
+  font-size: 10px;
+  width: 95%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+  line-height: 1;
+  padding-left: 10rpx;
+}
+/* .newsongs .newsong_artists{
+  font-size: 10px;
+} */
+
+.newAlbum{
+  margin-bottom: 110rpx;
+}

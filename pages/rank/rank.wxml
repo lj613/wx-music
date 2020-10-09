@@ -1,0 +1,10 @@
+<!--pages/rank/rank.wxml-->
+<!-- 排行榜页面 -->
+<view class="songsheet_container">
+	<view class='songsheet_items_box'>
+		<view class="songsheet_item_box" wx:for="{{rankingList}}" wx:key="" data-id="{{item.id}}" bindtap='go_detail'>
+			<image src='{{item.coverImgUrl}}' class="songsheet_image"></image>
+			<view class='songsheet_text'>{{item.name}}</view>
+		</view>
+	</view>
+</view>

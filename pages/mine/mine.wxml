@@ -1,0 +1,33 @@
+<!--pages/mine/mine.wxml-->
+<!-- 我的页面 -->
+<view class="wrapper">
+	<image class="bg-pic" src="../../images/mine.jpg"></image>
+	<view class="main">
+		<view class="mine">
+			<image class="mine-pic" src="{{user.profile.avatarUrl}}" />
+			<text class="mine-name">{{user.profile.nickname}}</text>
+			<text class="mine-grade">Lv.{{user.level}}</text>
+		</view>
+
+	</view>
+	<view class="des">
+		<view class="my">
+			<text class="my-name">我的音乐</text>
+		</view>
+		<view class="musicsheet">
+			<block wx:for="{{playlist}}" wx:key="index">
+				<view class="musicsheet-box" bindtap="gotoSongList" data-id="{{item.id}}">
+					<image class="musicsheet-pic" src="{{item.coverImgUrl}}" />
+					<view>
+						<view class="musicsheet-list">
+							<text>{{item.name}}</text>
+						</view>
+						<view class="musicsheet-des">
+							<text>{{item.describe}}</text>
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>

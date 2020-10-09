@@ -1,0 +1,124 @@
+/* pages/recommend/recommend.wxss */
+@import '/icon/icon.wxss';
+
+.wrapper {
+  width: 100vw;
+  height: 100vh
+}
+
+.bg-pic {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
+}
+
+.top {
+  width: 100%;
+  height: 300rpx;
+}
+
+.title {
+  color: white;
+  margin-left: 40rpx;
+}
+
+.title-day {
+  font-size: 60rpx;
+}
+
+.title-month {
+  font-size: 30rpx;
+}
+
+.title-text {
+  padding: 5rpx 10rpx;
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: 20rpx;
+  font-size: 20rpx;
+}
+
+.down {
+  width: 100%;
+  padding: 20rpx;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  top: -20px;
+  background-color: white;
+}
+
+.buttonBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+}
+
+.collectBox {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.broadcast {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.broadcast-name {
+  margin-left: 20rpx;
+  flex: 70%;
+}
+
+.song-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.song-img {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.song {
+  flex: 70%;
+  padding-left: 20rpx;
+}
+
+.song-name {
+  max-width: 480rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-bottom: 10rpx;
+}
+
+.song-author {
+  color: #978e8e;
+  font-size: 22rpx;
+  max-width: 480rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.icon-play {
+  font-size: 43rpx;
+  margin-right: 30rpx;
+  color: #978e8e;
+}
+
+.icon-ellipsis {
+  font-size: 43rpx;
+  margin-right: 10rpx;
+  color: #978e8e;
+}
