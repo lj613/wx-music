@@ -5,7 +5,7 @@
 ## 视频页面
 ![视频页面](https://github.com/lj613/wx-music/blob/master/%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/video.png)
 
-##搜索页面
+## 搜索页面
 ![搜索页面](https://github.com/lj613/wx-music/blob/master/%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/search.png)
 
 ## 搜索结果显示页面
